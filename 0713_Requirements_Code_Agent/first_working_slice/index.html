@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>智慧課程分組原型</title>
+  <style>
+    body { font-family: 'Microsoft JhengHei', sans-serif; margin: 0; background: #f5f7fb; color: #223; }
+    .container { max-width: 1100px; margin: 0 auto; padding: 24px; }
+    .card { background: white; border-radius: 14px; padding: 20px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0,0,0,0.06); }
+    h1, h2 { margin-top: 0; }
+    .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .pill { display: inline-block; padding: 6px 10px; border-radius: 999px; background: #eef4ff; color: #225; margin-right: 6px; margin-bottom: 6px; }
+    button { padding: 8px 12px; border: 0; border-radius: 8px; cursor: pointer; background: #2d6cdf; color: white; }
+    .muted { color: #667; font-size: 0.95rem; }
+    .task { border: 1px solid #e2e8f0; border-radius: 10px; padding: 10px; margin-bottom: 8px; }
+    .state { font-weight: bold; color: #2b6cb0; }
+    .row { display: flex; justify-content: space-between; gap: 8px; align-items: center; }
+    .small { font-size: 0.9rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>智慧課程分組與跨系組隊媒合系統</h1>
+      <p class="muted">第一個可操作切片：學生查看隊伍與提交加入申請；組長建立任務並切換狀態。</p>
+    </div>
+
+    <div class="card">
+      <h2>學生角色：技能與隊伍資訊</h2>
+      <div class="grid">
+        <div>
+          <h3>我的技能標籤</h3>
+          <div class="pill">Python</div>
+          <div class="pill">簡報</div>
+          <div class="pill">資料整理</div>
+          <p><strong>偏好：</strong>跨系隊伍，願意負責報告與簡報</p>
+          <button onclick="alert('技能已更新')">更新技能</button>
+        </div>
+        <div>
+          <h3>可加入隊伍</h3>
+          <div class="task">
+            <div class="row"><strong>隊伍 A：智慧分組</strong><span class="state">還缺 2 人</span></div>
+            <p class="small">需求：Python、簡報</p>
+            <p class="small">目前人數：3 / 5</p>
+            <button onclick="applyJoin('隊伍 A')">申請加入</button>
+          </div>
+          <div class="task">
+            <div class="row"><strong>隊伍 B：資料分析</strong><span class="state">還缺 1 人</span></div>
+            <p class="small">需求：資料整理、報告</p>
+            <p class="small">目前人數：4 / 5</p>
+            <button onclick="applyJoin('隊伍 B')">申請加入</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <h2>組長角色：任務看板</h2>
+      <div class="task">
+        <div class="row"><strong>任務：整理需求訪談結果</strong><span class="state">Todo</span></div>
+        <p class="small">負責人：A</p>
+        <button onclick="advanceTask('任務：整理需求訪談結果')">切換為 Doing</button>
+      </div>
+      <div class="task">
+        <div class="row"><strong>任務：製作簡報草稿</strong><span class="state">Doing</span></div>
+        <p class="small">負責人：B</p>
+        <button onclick="advanceTask('任務：製作簡報草稿')">切換為 Done</button>
+      </div>
+      <div class="task">
+        <div class="row"><strong>任務：確認分組規則</strong><span class="state">Done</span></div>
+        <p class="small">負責人：C</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function applyJoin(teamName) {
+      alert(teamName + ' 申請已送出');
+    }
+
+    function advanceTask(taskName) {
+      alert(taskName + ' 狀態已更新');
+    }
+  </script>
+</body>
+</html>
