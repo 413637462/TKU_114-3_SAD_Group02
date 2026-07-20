@@ -1,0 +1,20 @@
+flowchart LR
+    Student[一般學生]
+    Staff[專案組長]
+    Teacher[授課老師]
+
+    subgraph System[智慧課程分組與跨系組隊媒合系統]
+        UC1([儲存學生偏好])
+        UC2([查看隊伍與缺口])
+        UC3([提交加入申請])
+        UC4([建立任務])
+        UC5([更新任務狀態])
+        UC6([查看簡易摘要])
+    end
+
+    Student --- UC1
+    Student --- UC2
+    Student --- UC3
+    Staff --- UC4
+    Staff --- UC5
+    Teacher --- UC6

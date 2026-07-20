@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>0720 第三個可操作切片</title>
+  <style>
+    body { font-family: 'Microsoft JhengHei', Arial, sans-serif; margin: 0; background: #f8fafc; color: #0f172a; }
+    .container { max-width: 980px; margin: 0 auto; padding: 24px; }
+    .card { background: #fff; border-radius: 14px; padding: 16px; margin-bottom: 16px; box-shadow: 0 3px 10px rgba(0,0,0,0.06); }
+    input, button, select { font: inherit; padding: 10px; border-radius: 8px; border: 1px solid #cbd5e1; margin-top: 6px; }
+    button { background: #2563eb; color: #fff; border: 0; cursor: pointer; }
+    button.secondary { background: #64748b; }
+    .message { padding: 8px 10px; border-radius: 8px; margin-top: 8px; }
+    .success { background: #dcfce7; color: #166534; }
+    .error { background: #fee2e2; color: #b91c1c; }
+    .team, .task { border: 1px solid #e2e8f0; padding: 10px; border-radius: 10px; margin-top: 8px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <h1>0720 第三個可操作切片</h1>
+      <p>支援學生偏好輸入、隊伍申請與任務狀態更新，作為本次使用案例流程的可操作驗證。</p>
+    </div>
+    <div class="card">
+      <h2>學生偏好</h2>
+      <input id="skillInput" placeholder="輸入技能標籤" />
+      <input id="preferenceInput" placeholder="輸入偏好" />
+      <button id="savePreference">儲存偏好</button>
+      <div id="preferenceMessage" class="message"></div>
+      <div id="preferenceList"></div>
+    </div>
+    <div class="card">
+      <h2>隊伍申請</h2>
+      <div id="teamList"></div>
+    </div>
+    <div class="card">
+      <h2>任務看板</h2>
+      <input id="taskName" placeholder="任務名稱" />
+      <input id="taskOwner" placeholder="負責人" />
+      <select id="taskState">
+        <option value="Todo">Todo</option>
+        <option value="Doing">Doing</option>
+      </select>
+      <button id="addTask">新增任務</button>
+      <div id="taskMessage" class="message"></div>
+      <div id="taskList"></div>
+    </div>
+  </div>
+  <script>
+    const state = {
+      preferences: [],
+      applications: [],
+      teams: [
+        { id: 'team-a', name: '隊伍 A', members: 3, capacity: 5, status: '還缺 2 人' },
+        { id: 'team-b', name: '隊伍 B', members: 5, capacity: 5, status: '已額滿' }
+      ],
+      tasks: []
+    };
+
+    function render() {
+      document.getElementById('preferenceList').innerHTML = state.preferences.length ? state.preferences.map(item => `<div class="team">${item}</div>`).join('') : '<div class="team">尚未輸入偏好。</div>';
+      document.getElementById('teamList').innerHTML = state.teams.map(team => {
+        const disabled = team.members >= team.capacity || state.applications.includes(team.id);
+        return `<div class="team"><strong>${team.name}</strong><div>目前人數：${team.members}/${team.capacity}</div><div>狀態：${team.status}</div><button class="secondary" data-team-id="${team.id}" ${disabled ? 'disabled' : ''}>${state.applications.includes(team.id) ? '已送出申請' : team.members >= team.capacity ? '已額滿' : '申請加入'}</button></div>`;
+      }).join('');
+      document.getElementById('taskList').innerHTML = state.tasks.map(task => `<div class="task"><strong>${task.name}</strong><div>負責人：${task.owner}</div><div>狀態：${task.state}</div></div>`).join('');
+    }
+
+    document.getElementById('savePreference').addEventListener('click', () => {
+      const skill = document.getElementById('skillInput').value.trim();
+      const preference = document.getElementById('preferenceInput').value.trim();
+      const message = document.getElementById('preferenceMessage');
+      if (!skill && !preference) {
+        message.className = 'message error';
+        message.textContent = '請至少輸入一項技能或偏好。';
+        return;
+      }
+      const entry = [skill, preference].filter(Boolean).join(' / ');
+      state.preferences.push(entry);
+      message.className = 'message success';
+      message.textContent = '偏好已儲存。';
+      document.getElementById('skillInput').value = '';
+      document.getElementById('preferenceInput').value = '';
+      render();
+    });
+
+    document.getElementById('teamList').addEventListener('click', (event) => {
+      const button = event.target.closest('button[data-team-id]');
+      if (!button) return;
+      const teamId = button.getAttribute('data-team-id');
+      if (state.applications.includes(teamId)) return;
+      state.applications.push(teamId);
+      const team = state.teams.find(item => item.id === teamId);
+      if (team && team.members < team.capacity) {
+        team.members += 1;
+        team.status = team.members >= team.capacity ? '已額滿' : `還缺 ${team.capacity - team.members} 人`;
+      }
+      render();
+    });
+
+    document.getElementById('addTask').addEventListener('click', () => {
+      const name = document.getElementById('taskName').value.trim();
+      const owner = document.getElementById('taskOwner').value.trim();
+      const stateValue = document.getElementById('taskState').value;
+      const message = document.getElementById('taskMessage');
+      if (!name || !owner) {
+        message.className = 'message error';
+        message.textContent = '任務名稱與負責人不可空白。';
+        return;
+      }
+      state.tasks.push({ name, owner, state: stateValue });
+      message.className = 'message success';
+      message.textContent = '任務已建立。';
+      document.getElementById('taskName').value = '';
+      document.getElementById('taskOwner').value = '';
+      render();
+    });
+
+    render();
+  </script>
+</body>
+</html>

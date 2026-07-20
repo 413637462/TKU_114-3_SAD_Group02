@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="520" viewBox="0 0 900 520">
+  <rect width="900" height="520" fill="#ffffff"/>
+  <text x="40" y="40" font-size="22" font-family="Microsoft JhengHei, Arial, sans-serif" font-weight="700">現況流程圖：學生申請與任務更新</text>
+  <rect x="80" y="80" width="220" height="360" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="130" y="110" font-size="18" font-family="Microsoft JhengHei, Arial, sans-serif">一般學生</text>
+  <rect x="340" y="80" width="220" height="360" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="390" y="110" font-size="18" font-family="Microsoft JhengHei, Arial, sans-serif">專案組長</text>
+  <rect x="600" y="80" width="220" height="360" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="650" y="110" font-size="18" font-family="Microsoft JhengHei, Arial, sans-serif">授課老師</text>
+  <rect x="110" y="140" width="160" height="46" rx="8" ry="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="132" y="170" font-size="14" font-family="Microsoft JhengHei, Arial, sans-serif">查看隊伍資訊</text>
+  <rect x="110" y="220" width="160" height="46" rx="8" ry="8" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="132" y="250" font-size="14" font-family="Microsoft JhengHei, Arial, sans-serif">透過訊息詢問狀態</text>
+  <rect x="370" y="140" width="160" height="46" rx="8" ry="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="388" y="170" font-size="14" font-family="Microsoft JhengHei, Arial, sans-serif">人工查看既有隊伍</text>
+  <rect x="370" y="220" width="160" height="46" rx="8" ry="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="388" y="250" font-size="14" font-family="Microsoft JhengHei, Arial, sans-serif">人工回覆申請結果</text>
+  <rect x="370" y="300" width="160" height="46" rx="8" ry="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="394" y="330" font-size="14" font-family="Microsoft JhengHei, Arial, sans-serif">手動更新任務狀態</text>
+  <rect x="630" y="220" width="160" height="46" rx="8" ry="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="650" y="250" font-size="14" font-family="Microsoft JhengHei, Arial, sans-serif">依靠人工整理摘要</text>
+  <line x1="190" y1="186" x2="370" y2="163" stroke="#475569" stroke-width="2"/>
+  <line x1="530" y1="163" x2="630" y2="243" stroke="#475569" stroke-width="2"/>
+  <line x1="270" y1="243" x2="370" y2="243" stroke="#475569" stroke-width="2"/>
+  <line x1="370" y1="266" x2="270" y2="243" stroke="#475569" stroke-width="2"/>
+  <line x1="530" y1="323" x2="630" y2="243" stroke="#475569" stroke-width="2"/>
+  <text x="80" y="470" font-size="15" font-family="Microsoft JhengHei, Arial, sans-serif">痛點：重複詢問、人工整理、狀態不透明</text>
+</svg>

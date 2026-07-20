@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+  <rect width="900" height="420" fill="#ffffff"/>
+  <text x="40" y="40" font-size="22" font-family="Microsoft JhengHei, Arial, sans-serif" font-weight="700">使用案例圖：智慧課程分組與跨系組隊媒合系統</text>
+  <rect x="60" y="80" width="780" height="290" rx="16" ry="16" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="90" y="115" font-size="18" font-family="Microsoft JhengHei, Arial, sans-serif" font-weight="700">系統邊界</text>
+  <ellipse cx="180" cy="190" rx="120" ry="42" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="120" y="195" font-size="16" font-family="Microsoft JhengHei, Arial, sans-serif">儲存學生偏好</text>
+  <ellipse cx="360" cy="190" rx="120" ry="42" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="300" y="195" font-size="16" font-family="Microsoft JhengHei, Arial, sans-serif">查看隊伍與缺口</text>
+  <ellipse cx="540" cy="190" rx="120" ry="42" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="485" y="195" font-size="16" font-family="Microsoft JhengHei, Arial, sans-serif">提交加入申請</text>
+  <ellipse cx="710" cy="190" rx="120" ry="42" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="660" y="195" font-size="16" font-family="Microsoft JhengHei, Arial, sans-serif">建立與更新任務</text>
+  <ellipse cx="360" cy="300" rx="120" ry="42" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="310" y="305" font-size="16" font-family="Microsoft JhengHei, Arial, sans-serif">查看簡易摘要</text>
+  <rect x="90" y="320" width="120" height="40" rx="8" ry="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="105" y="345" font-size="15" font-family="Microsoft JhengHei, Arial, sans-serif">一般學生</text>
+  <rect x="320" y="320" width="120" height="40" rx="8" ry="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="335" y="345" font-size="15" font-family="Microsoft JhengHei, Arial, sans-serif">專案組長</text>
+  <rect x="550" y="320" width="120" height="40" rx="8" ry="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="565" y="345" font-size="15" font-family="Microsoft JhengHei, Arial, sans-serif">授課老師</text>
+  <line x1="210" y1="320" x2="180" y2="232" stroke="#475569" stroke-width="2"/>
+  <line x1="360" y1="320" x2="360" y2="232" stroke="#475569" stroke-width="2"/>
+  <line x1="550" y1="320" x2="540" y2="232" stroke="#475569" stroke-width="2"/>
+  <line x1="440" y1="320" x2="710" y2="232" stroke="#475569" stroke-width="2"/>
+  <line x1="360" y1="320" x2="360" y2="342" stroke="#475569" stroke-width="2"/>
+</svg>
